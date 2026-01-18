@@ -1,4 +1,10 @@
 import styled from "styled-components";
+import {
+  FaMapMarkerAlt,
+  FaClock,
+  FaMapSigns,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 const Section = styled.section`
   width: min(1120px, calc(100% - 24px));
@@ -18,7 +24,7 @@ const Card = styled.div`
 `;
 
 const Title = styled.h2`
-  margin: 0 0 10px;
+  margin: 0 0 14px;
   font-size: clamp(18px, 2.6vw, 24px);
 `;
 
@@ -36,23 +42,48 @@ const Grid = styled.div`
 `;
 
 const Item = styled.div`
-  padding: 12px;
-  border-radius: 16px;
+  padding: 14px;
+  border-radius: 18px;
   background: rgba(0,0,0,.18);
   border: 1px solid rgba(255,255,255,.10);
 
-  @media (max-width: 520px) {
-    border-radius: 14px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+`;
+
+const Icon = styled.div`
+  min-width: 36px;
+  height: 36px;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(8px);
+
+  svg {
+    font-size: 1.05rem;
+    color: rgba(244,247,255,.95);
   }
 `;
 
-const Label = styled.div`
-  font-size: 12px;
-  opacity: .75;
-  margin-bottom: 4px;
+const Text = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 `;
 
-const Value = styled.div`
+const Label = styled.span`
+  font-size: 0.75rem;
+  letter-spacing: .2px;
+  opacity: .7;
+`;
+
+const Value = styled.span`
   font-weight: 800;
   line-height: 1.3;
 `;
@@ -61,15 +92,19 @@ const Actions = styled.div`
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: 14px;
+  margin-top: 16px;
 `;
 
 const Btn = styled.a`
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
   padding: 12px 14px;
   border-radius: 14px;
   text-decoration: none;
   font-weight: 800;
+
   border: 1px solid rgba(255,255,255,.14);
   background: rgba(255,255,255,.08);
   transition: transform .15s ease, opacity .15s ease;
@@ -85,7 +120,9 @@ const Primary = styled(Btn)`
 
 export function ImportantInfo() {
   const whatsappAdriana = "https://wa.me/5511973281992";
-  const mapsSaida = "https://www.google.com/maps?q=Rua+Ernesto+Augusto+Cleto,+511";
+ const mapsSaida =
+  "https://www.google.com/maps?q=Ces%C3%A1rio+Lange+SP+18285-000";
+
 
   return (
     <Section id="info">
@@ -94,32 +131,45 @@ export function ImportantInfo() {
 
         <Grid>
           <Item>
-            <Label>Destino</Label>
-            <Value>Santa Cruz – Cesário Lange (18285-000)</Value>
+            <Icon><FaMapMarkerAlt /></Icon>
+            <Text>
+              <Label>Destino</Label>
+              <Value>Santa Cruz – Cesário Lange (18285-000)</Value>
+            </Text>
           </Item>
 
           <Item>
-            <Label>Saída</Label>
-            <Value>14 horas</Value>
+            <Icon><FaClock /></Icon>
+            <Text>
+              <Label>Saída</Label>
+              <Value>14 horas</Value>
+            </Text>
           </Item>
 
           <Item>
-            <Label>Endereço de saída</Label>
-            <Value>Rua Ernesto Augusto Cleto, 511 (Sede)</Value>
+            <Icon><FaMapSigns /></Icon>
+            <Text>
+              <Label>Endereço de saída</Label>
+              <Value>Rua Ernesto Augusto Cleto, 511 (Sede)</Value>
+            </Text>
           </Item>
 
           <Item>
-            <Label>Dúvidas</Label>
-            <Value>Secretaria Adriana: (11) 97328-1992</Value>
+            <Icon><FaWhatsapp /></Icon>
+            <Text>
+              <Label>Dúvidas</Label>
+              <Value>Secretaria Adriana • (11) 97328-1992</Value>
+            </Text>
           </Item>
         </Grid>
 
         <Actions>
           <Primary href={whatsappAdriana} target="_blank" rel="noreferrer">
-            Falar com a Adriana (WhatsApp)
+            <FaWhatsapp /> Falar com a Adriana
           </Primary>
+
           <Btn href={mapsSaida} target="_blank" rel="noreferrer">
-            Ver endereço no mapa
+            <FaMapMarkerAlt /> Ver endereço no mapa
           </Btn>
         </Actions>
       </Card>

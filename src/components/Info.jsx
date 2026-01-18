@@ -1,54 +1,92 @@
 import styled from "styled-components";
+import { FaCalendarAlt, FaMoneyBillWave, FaUsers } from "react-icons/fa";
 
 const Wrap = styled.section`
-  width: min(1120px, calc(100% - 32px));
-  margin: 26px auto 8px;
+  width: min(1120px, calc(100% - 24px));
+  margin: 14px auto 0;
 `;
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 14px;
-`;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
 
-const Card = styled.div`
-  grid-column: span 12;
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.10);
-
-  @media (min-width: 760px) {
-    grid-column: span 4;
+  @media (max-width: 760px) {
+    grid-template-columns: 1fr;
   }
 `;
 
-const H = styled.h3`
-  margin: 0 0 8px;
-  font-size: 16px;
+const Card = styled.div`
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+  border: 1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(12px);
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
 `;
 
-const P = styled.p`
-  margin: 0;
-  opacity: .92;
-  line-height: 1.45;
+const Icon = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+
+  display: grid;
+  place-items: center;
+
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.14);
+
+  svg {
+    font-size: 1.05rem;
+    color: rgba(244,247,255,.95);
+  }
+`;
+
+const Text = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+`;
+
+const Label = styled.span`
+  font-size: 0.75rem;
+  opacity: .65;
+`;
+
+const Value = styled.span`
+  font-weight: 800;
+  line-height: 1.3;
 `;
 
 export function Info() {
   return (
-    <Wrap id="info">
+    <Wrap>
       <Grid>
         <Card>
-          <H>📅 Data</H>
-          <P>14 e 15 de fevereiro</P>
+          <Icon><FaCalendarAlt /></Icon>
+          <Text>
+            <Label>Data</Label>
+            <Value>14 e 15 de fevereiro</Value>
+          </Text>
         </Card>
+
         <Card>
-          <H>💰 Investimento</H>
-          <P>R$ 80,00 por pessoa</P>
+          <Icon><FaMoneyBillWave /></Icon>
+          <Text>
+            <Label>Investimento</Label>
+            <Value>R$ 80,00 por pessoa</Value>
+          </Text>
         </Card>
+
         <Card>
-          <H>🧑‍🤝‍🧑 Público</H>
-          <P>A partir dos 16 anos</P>
+          <Icon><FaUsers /></Icon>
+          <Text>
+            <Label>Público</Label>
+            <Value>A partir dos 16 anos</Value>
+          </Text>
         </Card>
       </Grid>
     </Wrap>

@@ -4,39 +4,53 @@ import styled from "styled-components";
 import { FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 const Wrap = styled.footer`
-  margin-top: 34px;
-  padding: 26px 0 30px;
+  margin-top: 26px;
+  padding: 14px 0 18px;
   border-top: 1px solid rgba(255, 255, 255, 0.10);
-  background: rgba(255, 255, 255, 0.03);
 `;
 
 const Inner = styled.div`
-  width: min(1120px, calc(100% - 32px));
+  width: min(1120px, calc(100% - 24px));
   margin: 0 auto;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
+  gap: 10px;
   flex-wrap: wrap;
 `;
 
 const Left = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   min-width: 240px;
+
+  @media (max-width: 520px) {
+    min-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
-const BrandLine = styled.div`
+const Line = styled.div`
   display: flex;
   align-items: baseline;
-  flex-wrap: wrap;
   gap: 8px;
+  flex-wrap: wrap;
+
+  @media (max-width: 520px) {
+    justify-content: center;
+  }
 `;
 
 const Copy = styled.span`
-  color: rgba(244, 247, 255, 0.78);
-  font-size: 0.95rem;
+  color: rgba(244, 247, 255, 0.72);
+  font-size: 0.9rem;
+
+  @media (max-width: 520px) {
+    font-size: 0.84rem;
+  }
 `;
 
 const Brand = styled.span`
@@ -46,25 +60,34 @@ const Brand = styled.span`
 `;
 
 const Sub = styled.span`
-  color: rgba(244, 247, 255, 0.58);
-  font-size: 0.85rem;
+  color: rgba(244, 247, 255, 0.52);
+  font-size: 0.82rem;
+
+  @media (max-width: 520px) {
+    font-size: 0.78rem;
+  }
 `;
 
 const Right = styled.div`
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+
+  @media (max-width: 520px) {
+    width: 100%;
+    justify-content: center;
+    margin-top: 6px;
+  }
 `;
 
 const IconBtn = styled.a`
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   border-radius: 14px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  /* Glass button */
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(10px);
@@ -72,10 +95,10 @@ const IconBtn = styled.a`
   color: rgba(244, 247, 255, 0.86);
   text-decoration: none;
 
-  transition: transform 0.18s ease, opacity 0.18s ease, border-color 0.18s ease;
+  transition: transform 0.16s ease, opacity 0.16s ease, border-color 0.16s ease;
 
   svg {
-    font-size: 1.18rem;
+    font-size: 1.08rem;
   }
 
   &:hover {
@@ -89,11 +112,19 @@ const IconBtn = styled.a`
     outline-offset: 2px;
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    transition: opacity 0.18s ease, border-color 0.18s ease;
-    &:hover {
-      transform: none;
+  @media (max-width: 520px) {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+
+    svg {
+      font-size: 1.02rem;
     }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: opacity 0.16s ease, border-color 0.16s ease;
+    &:hover { transform: none; }
   }
 `;
 
@@ -104,11 +135,11 @@ export default function Footer() {
     <Wrap>
       <Inner>
         <Left>
-          <BrandLine>
+          <Line>
             <Copy>© {ano}</Copy>
             <Copy>Desenvolvido por</Copy>
             <Brand>Carboni</Brand>
-          </BrandLine>
+          </Line>
           <Sub>Todos os direitos reservados.</Sub>
         </Left>
 
