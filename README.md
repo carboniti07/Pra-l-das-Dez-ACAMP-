@@ -4,7 +4,7 @@ Landing page do evento **Pra Lá das Dez ACAMP (ADBRR)**, feita com **React + Vi
 Inclui seções com **parallax**, informações do evento e botão para inscrição (Google Forms via redirect no Netlify).
 
 ## 🔗 Links
-- Site: (coloque aqui)
+- Site:(https://acamp.adbrr.com.br/)
 - Inscrição: `/inscricao` (redirect para Google Forms)
 
 ## ✨ Funcionalidades
