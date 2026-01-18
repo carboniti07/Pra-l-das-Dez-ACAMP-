@@ -1,16 +1,27 @@
-# React + Vite
+# Pra Lá das Dez ACAMP — Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page do evento **Pra Lá das Dez ACAMP (ADBRR)**, feita com **React + Vite + styled-components**.
+Inclui seções com **parallax**, informações do evento e botão para inscrição (Google Forms via redirect no Netlify).
 
-Currently, two official plugins are available:
+## 🔗 Links
+- Site: (coloque aqui)
+- Inscrição: `/inscricao` (redirect para Google Forms)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Funcionalidades
+- Layout responsivo (mobile-first)
+- Hero com imagem + CTA
+- Seções com efeito parallax
+- Informações importantes (destino, saída, contato)
+- Footer profissional com links sociais
+- Redirect de rota (`/inscricao`) configurado para Google Forms (Netlify)
 
-## React Compiler
+## 🧰 Tecnologias
+- React
+- Vite
+- styled-components
+- Netlify
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ▶️ Rodar localmente
+```bash
+npm install
+npm run dev
