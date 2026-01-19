@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useRef } from "react";
 import { useParallax } from "../hooks/useParallax";
 
 const Wrap = styled.section`
@@ -24,7 +25,6 @@ const Img = styled.div`
   inset: -60px 0;
   background-image: url(${(p) => p.$src});
   background-size: cover;
-
   background-position: ${(p) => p.$pos || "center"};
 
   transform: translate3d(0, ${(p) => p.$y}px, 0) scale(1.03);
@@ -33,7 +33,7 @@ const Img = styled.div`
   @media (max-width: 768px) {
     inset: -30px 0;
     background-position: ${(p) => p.$mobilePos || p.$pos || "center"};
-    transform: translate3d(0, ${(p) => p.$my}px, 0) scale(1.02);
+    transform: translate3d(0, ${(p) => p.$y}px, 0) scale(1.02);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -78,21 +78,15 @@ const Sub = styled.p`
 `;
 
 export function ParallaxSection({ src, title, subtitle, pos, mobilePos }) {
-  // ✅ mais lento no desktop
-  const y = useParallax(0.06);
+  const ref = useRef(null);
 
-  // ✅ mobile bem mais suave e com limite menor
- const mobileY = Math.max(-18, Math.min(18, y * 0.55));
+  // ✅ controla a “velocidade” aqui:
+  // amplitude (desktop) e mobileAmplitude (celular)
+  const y = useParallax(ref, { amplitude: 35, mobileAmplitude: 60 });
 
   return (
-    <Wrap>
-      <Img
-        $src={src}
-        $y={y}
-        $my={mobileY}
-        $pos={pos}
-        $mobilePos={mobilePos}
-      />
+    <Wrap ref={ref}>
+      <Img $src={src} $y={y} $pos={pos} $mobilePos={mobilePos} />
       <Overlay />
       <Content>
         <Title>{title}</Title>
