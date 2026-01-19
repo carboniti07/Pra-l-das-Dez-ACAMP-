@@ -96,7 +96,11 @@ export default function FAQ() {
         <summary>Quando minha vaga é confirmada?</summary>
         <p>
           A vaga é confirmada somente após o preenchimento do formulário
-          e a confirmação do pagamento.
+          e a confirmação do pagamento com o envio do comprovante.
+        </p>
+         <summary>Quais são as formas de pagamentos</summary>
+        <p>
+        Voce pode pagar pelo pix ou pelo cartao de debito ou credito, a vista ou parcelado,  mas sujeito a taxa da operadora, pagamentos via pix enviar comprovamente no numero informado, e pelo cartao somente presencialmnte...
         </p>
       </Item>
     </Section>

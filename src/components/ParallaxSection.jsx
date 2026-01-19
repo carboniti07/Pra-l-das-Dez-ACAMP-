@@ -82,7 +82,7 @@ export function ParallaxSection({ src, title, subtitle, pos, mobilePos }) {
   const y = useParallax(0.06);
 
   // ✅ mobile bem mais suave e com limite menor
-  const mobileY = Math.max(-12, Math.min(12, y * 0.30));
+ const mobileY = Math.max(-18, Math.min(18, y * 0.55));
 
   return (
     <Wrap>

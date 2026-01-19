@@ -144,7 +144,8 @@ export function ImportantInfo() {
             <Icon><FaClock /></Icon>
             <Text>
               <Label>Saída</Label>
-              <Value>14 horas</Value>
+             <Value>Sábado às 14 horas</Value>
+
             </Text>
           </Item>
 
