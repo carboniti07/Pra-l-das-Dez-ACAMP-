@@ -22,20 +22,37 @@ const Wrap = styled.section`
 
 const Img = styled.div`
   position: absolute;
-  inset: -60px 0;
+
+  /* ✅ evita flicker no mobile (melhor que inset) */
+  top: -40px;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+
   background-image: url(${(p) => p.$src});
   background-size: cover;
+
+  /* foco controlável por foto */
   background-position: ${(p) => p.$pos || "center"};
 
+  /* parallax */
   transform: translate3d(0, ${(p) => p.$y}px, 0) scale(1.03);
   will-change: transform;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
 
+  /* ✅ Mobile: mantém efeito, mas mais suave e estável */
   @media (max-width: 768px) {
-    inset: -30px 0;
+    top: -26px;
+    bottom: -26px;
+
     background-position: ${(p) => p.$mobilePos || p.$pos || "center"};
-    transform: translate3d(0, ${(p) => p.$y}px, 0) scale(1.02);
+
+    /* reduz o movimento no celular pra evitar “piscadas” */
+    transform: translate3d(0, ${(p) => p.$y * 0.6}px, 0) scale(1.02);
   }
 
+  /* Se o usuário tiver "reduzir movimento" ligado, desativa o parallax */
   @media (prefers-reduced-motion: reduce) {
     transform: none;
     will-change: auto;
@@ -80,9 +97,8 @@ const Sub = styled.p`
 export function ParallaxSection({ src, title, subtitle, pos, mobilePos }) {
   const ref = useRef(null);
 
-  // ✅ controla a “velocidade” aqui:
-  // amplitude (desktop) e mobileAmplitude (celular)
-  const y = useParallax(ref, { amplitude: 35, mobileAmplitude: 60 });
+  // ✅ mais estável no mobile (sem “piscadas”)
+  const y = useParallax(ref, { amplitude: 35, mobileAmplitude: 35 });
 
   return (
     <Wrap ref={ref}>
