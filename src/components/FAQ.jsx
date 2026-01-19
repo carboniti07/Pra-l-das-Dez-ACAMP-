@@ -74,8 +74,8 @@ export default function FAQ() {
           para que possamos cuidar de você da melhor forma possível durante o Acamp.
         </p>
       </Item>
- <Item>
-    
+      <Item>
+
         <summary>O que devo levar?</summary>
         <p>
           Cada participante deve levar roupa de cama (lençol, cobertor ou travesseiro,
@@ -83,7 +83,7 @@ export default function FAQ() {
           A alimentação, hospedagem e transporte já estão inclusos no valor do acampamento.
         </p>
       </Item>
-      
+
       <Item>
         <summary>Como funciona o pagamento?</summary>
         <p>
@@ -98,10 +98,14 @@ export default function FAQ() {
           A vaga é confirmada somente após o preenchimento do formulário
           e a confirmação do pagamento com o envio do comprovante.
         </p>
-         <summary>Quais são as formas de pagamentos</summary>
+        <summary>Quais são as formas de pagamento?</summary>
         <p>
-        Voce pode pagar pelo pix ou pelo cartao de debito ou credito, a vista ou parcelado,  mas sujeito a taxa da operadora, pagamentos via pix enviar comprovamente no numero informado, e pelo cartao somente presencialmnte...
+          O pagamento pode ser realizado via <strong>Pix</strong> ou <strong>cartão de débito e crédito</strong>.
+          No cartão, o pagamento pode ser à vista ou parcelado, sujeito às taxas da operadora.
+          Pagamentos via Pix devem ter o comprovante enviado para o número informado.
+          O pagamento com cartão é realizado somente de forma presencial.
         </p>
+
       </Item>
     </Section>
   );
