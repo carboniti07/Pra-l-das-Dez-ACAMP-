@@ -98,13 +98,17 @@ export default function FAQ() {
           A vaga é confirmada somente após o preenchimento do formulário
           e a confirmação do pagamento com o envio do comprovante.
         </p>
-        <summary>Quais são as formas de pagamento?</summary>
-        <p>
-          O pagamento pode ser realizado via <strong>Pix</strong> ou <strong>cartão de débito e crédito</strong>.
-          No cartão, o pagamento pode ser à vista ou parcelado, sujeito às taxas da operadora.
-          Pagamentos via Pix devem ter o comprovante enviado para o número informado.
-          O pagamento com cartão é realizado somente de forma presencial.
-        </p>
+
+        <Item>
+          <summary>Quais são as formas de pagamento?</summary>
+          <p>
+            O pagamento pode ser realizado via <strong>Pix</strong> ou <strong>cartão de débito e crédito</strong>.
+            No cartão, o pagamento pode ser à vista ou parcelado, sujeito às taxas da operadora.
+            Pagamentos via Pix devem ter o comprovante enviado para o número informado.
+            O pagamento com cartão é realizado somente de forma presencial.
+          </p>
+        </Item>
+
 
       </Item>
     </Section>
